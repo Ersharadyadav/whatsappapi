@@ -1,5 +1,3 @@
-const serverless = require("serverless-http");
-const https = require('https');
 const express = require("express");
 const axios = require('axios').default;
 var cors = require('cors')
@@ -38,5 +36,36 @@ async function getUserDetailsFromInnexia() {
 }
 getUserDetailsFromInnexia();
 
+// const data = JSON.stringify({
+//   MobileNo: "+918866443258",
+// });
 
-module.exports.handler = serverless(app);
+// const options = {
+//   hostname: '2nzi09hwg8.execute-api.us-east-2.amazonaws.com',
+//   port: 443,
+//   path: '/Prod/api/v2/WhatsappSupport/GetUserHubByMobileNumber',
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'Content-Length': data.length,
+//   },
+// };
+
+// const req = https.request(options, res => {
+//   console.log(`statusCode: ${res}`);
+
+//   res.on('data', d => {
+//     console.log("getting response...");
+//     process.stdout.write(d);
+//   });
+// });
+
+// req.on('error', error => {
+//   console.error(error);
+// });
+
+// req.write(data);
+// req.end();
+
+app.listen(3000, () => console.log(`Listening on: 3000`));
+//module.exports.handler = serverless(app);
