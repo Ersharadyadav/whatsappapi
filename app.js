@@ -6,9 +6,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-// app.get("/api/info", (req, res) => {
-//   res.send({ application: "sample-app", version: "1" });
-// });
+app.get("/api/info", (req, res) => {
+  res.send({ application: "sample-app", version: "1" });
+});
 // app.post("/api/v1/getback", (req, res) => {
 //   res.send({ ...req.body });
 // });
